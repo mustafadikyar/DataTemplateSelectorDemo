@@ -5,6 +5,20 @@
              x:Class="DataTemplateSelectorDemo.Pages.QuestionPage">
     <ContentPage.Resources>
         <ResourceDictionary>
+            <!--  inline template for text editor questions  -->
+            <DataTemplate x:Key="editorTemplate">
+                <ViewCell Height="200">
+                    <Grid Padding="10" BackgroundColor="#ff8a80">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="AUTO" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Label Text="{Binding Question}" />
+                        <Editor Grid.Row="1" BackgroundColor="#EEEEEE" Text="{Binding Answer}" VerticalOptions="Fill" />
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+            
             <!--  using a view as a template, so this allows cleaner xaml by declaring the template elsewhere  -->
             <DataTemplate x:Key="multichoiceItemTemplate">
                 <views:MultiChoiceView />
@@ -12,6 +26,7 @@
 
             <local:QuestionSelector x:Key="questionDataTemplateSelector" 
                                     SingleQuestionTemplate="{StaticResource singleQuestionTemplate}"
+                                    SingleQuestionTypeTwoTemplate="{StaticResource editorTemplate}"
                                     MultiChoiceTemplate="{StaticResource multichoiceItemTemplate}"/>
         </ResourceDictionary>
     </ContentPage.Resources>

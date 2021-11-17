@@ -7,6 +7,7 @@ namespace DataTemplateSelectorDemo.Selectors
     public class QuestionSelector : Xamarin.Forms.DataTemplateSelector
     {
         public DataTemplate SingleQuestionTemplate { get; set; }
+        public DataTemplate SingleQuestionTypeTwoTemplate { get; set; }
         public DataTemplate MultiChoiceTemplate { get; set; }
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
@@ -16,6 +17,9 @@ namespace DataTemplateSelectorDemo.Selectors
 
             if (item is MultiChoiceQuestionViewModel)
                 return MultiChoiceTemplate;
+
+            if (item is SingleQuestionTypeTwoViewModel)
+                return SingleQuestionTypeTwoTemplate;
 
             throw new InvalidOperationException($"No template specified for type {item.GetType().ToString()}");
         }

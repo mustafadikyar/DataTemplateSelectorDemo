@@ -1,10 +1,5 @@
 ﻿using DataTemplateSelectorDemo.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -32,6 +27,10 @@ namespace DataTemplateSelectorDemo.Pages
                 new SingleQuestionViewModel(new Models.SingleQuestion()
                 {
                     Question = "Question 1",
+                }),
+                new SingleQuestionTypeTwoViewModel(new Models.SingleQuestion()
+                {
+                    Question = "Question 2",
                 }),
                 new MultiChoiceQuestionViewModel(new Models.MultiChoiceQuestion()
                 {
