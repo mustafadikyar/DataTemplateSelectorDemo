@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataTemplateSelectorDemo.Views.MultiChoiceView">
+    
+    <Grid Padding="10" BackgroundColor="#82b1ff">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="AUTO" />
+            <RowDefinition Height="AUTO" />
+            <RowDefinition Height="AUTO" />
+            <RowDefinition Height="AUTO" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="AUTO" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.ColumnSpan="2" Text="{Binding Question}" />
+
+        <RadioButton Grid.Row="1" Grid.Column="0" Content="{Binding OptionOneText}"/>
+        <RadioButton Grid.Row="2" Grid.Column="0" Content="{Binding OptionTwoText}"/>
+        <RadioButton Grid.Row="3" Grid.Column="0" Content="{Binding OptionThreeText}"/>
+    </Grid>
+</ViewCell>

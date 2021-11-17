@@ -33,6 +33,13 @@ namespace DataTemplateSelectorDemo.Pages
                 {
                     Question = "Question 1",
                 }),
+                new MultiChoiceQuestionViewModel(new Models.MultiChoiceQuestion()
+                {
+                    Question = "What language are you developing with?",
+                    OptionOneText = "CSharp",
+                    OptionTwoText = "GoLang",
+                    OptionThreeText = "Other"
+                }),
             };
 
             return questions;
